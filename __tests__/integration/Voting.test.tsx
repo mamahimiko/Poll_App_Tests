@@ -3,16 +3,8 @@ import { fireEvent } from '@testing-library/react';
 import PollsApp from '@/components/PollsApp';
 import { type PollData } from '@/types/poll';
 
-/** Integration test covering: PollTabs + Poll working together as a
- * single voting flow 
-
- * State change under test: casting a vote moves the poll from
- * 'not voted' (no results shown) to 'voted' (results visible,
- * percentages recalculated from the updated vote counts).
-
- * Mock poll: Thor 42, Scarlet 51, Captain Marvel 7 -> total 100.
- * Voting for Thor makes it 43 out of 101 -> 43%.
- **/
+/** Mock poll: Thor 42, Scarlet 51, Captain Marvel 7 -> total 100.
+  Voting for Thor makes it 43 out of 101 -> 43%. **/
 
 const mockPolls: PollData[] = [
   {

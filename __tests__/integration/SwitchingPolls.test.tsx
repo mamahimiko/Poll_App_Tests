@@ -2,13 +2,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import PollsApp from '@/components/PollsApp';
 import { type PollData } from '@/types/poll';
 
-/** Integration test covering: PollTabs + Poll working together across
- * multiple polls.
- 
- * State change under test: voting on one poll must not affect another
- * poll's vote state. Switching tabs and switching back must preserve
- * each poll's own, independent voting status.
- **/
+/** State change under test: voting on one poll must not affect another
+ poll's vote state. Switching tabs and switching back must preserve
+ each poll's own, independent voting status.**/
 
 const mockPolls: PollData[] = [
   {

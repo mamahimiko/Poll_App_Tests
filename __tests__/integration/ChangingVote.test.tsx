@@ -2,19 +2,11 @@ import { render, screen, within, fireEvent } from '@testing-library/react';
 import PollsApp from '@/components/PollsApp';
 import { type PollData } from '@/types/poll';
 
-/**Integration test covering: PollTabs + Poll working together when a
- * user changes their mind after already voting.
- 
- * State change under test: switching a vote from one option to another
- * removes the vote from the old option and adds it to the new one,
- * which recalculates percentages and can move the 'leading/super hero' icon.
- 
- * Mock Poll ('Best Spider Man actor?') starts tied:
- * Tobey Maguire 55, Andrew Garfield 40, Tom Holland 55 -> total 150.
- * Voting for Tobey breaks the tie in his favour (56 vs 55).
- * Changing that vote to Tom Holland flips the lead to him instead
- * (Tobey back to 55, Tom up to 56) without changing the total (151).
- **/
+/** Mock Poll ('Best Spider Man actor?') starts tied:
+ Tobey Maguire 55, Andrew Garfield 40, Tom Holland 55 -> total 150.
+ Voting for Tobey breaks the tie in his favour (56 vs 55).
+ Changing that vote to Tom Holland flips the lead to him instead
+ (Tobey back to 55, Tom up to 56) without changing the total (151). **/
 
 const mockPolls: PollData[] = [
   {
