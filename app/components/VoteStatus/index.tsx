@@ -3,7 +3,7 @@ import PollOption from "../PollOption";
 type VotedStatusType = {
   hasVoted: boolean;
   votedOptionId: string | null;
-  votedOptionName: string;
+  votedOptionName: string | null;
   options: PollOption[];
   onChangeVote: (optionId: string) => void;
 };

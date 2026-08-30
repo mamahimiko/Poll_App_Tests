@@ -7,7 +7,6 @@ const lokiOption: PollOptionType = {
   name: "Loki",
   image: "loki.png",
   votes: 42,
-  question: undefined,
 };
 
 const mockFxn = jest.fn();
