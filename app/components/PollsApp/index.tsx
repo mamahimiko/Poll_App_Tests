@@ -23,7 +23,7 @@ const PollsApp = ({ initialPolls = pollQuestions }: PollsAppProps) => {
   const activePoll = polls.find((poll) => poll.id === activePollId);
 
   return (
-    <main className="w-[50%] --font-oswald">
+    <main className="w-[80%] sm:w-[50%] pb-10 --font-oswald">
       <div>
         <h1 className="text-2xl font-bold p-10 text-center">Marvel Polls</h1>
         <PollTabs

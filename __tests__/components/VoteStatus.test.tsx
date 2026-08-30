@@ -65,7 +65,10 @@ describe("Vote status", () => {
     );
 
     const dropdown = screen.getByTestId("change-vote-option");
-    fireEvent.change(dropdown, { target: { value: options[1].id } });
+    //fireEvent.change(dropdown, { target: { value: options[1].id } });
+    fireEvent.click(dropdown);
+    const targetOption = screen.getByTestId(`vote-option-${options[1].id}`);
+    fireEvent.mouseDown(targetOption);
 
     expect(handleChangeVote).toHaveBeenCalledWith(options[1].id);
   });
@@ -81,6 +84,9 @@ describe("Vote status", () => {
       />,
     );
 
-    expect(screen.getAllByRole("option")).toHaveLength(2);
+    const dropdown = screen.getByTestId("change-vote-option");
+    fireEvent.click(dropdown);
+    expect(screen.getAllByRole("listitem")).toHaveLength(2);
+    //expect(screen.getAllByRole("option")).toHaveLength(2);
   });
 });

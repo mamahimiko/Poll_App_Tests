@@ -54,7 +54,10 @@ describe("Changing an existing vote", () => {
 
     // CHANGE the vote to Tom Holland
     const changeDropdown = screen.getByTestId("change-vote-option");
-    fireEvent.change(changeDropdown, { target: { value: "option-6" } });
+    //fireEvent.change(changeDropdown, { target: { value: "option-6" } }); deleate it due to chnged the dropdown style
+    fireEvent.click(changeDropdown);
+    const tomOption = screen.getByTestId("vote-option-option-6");
+    fireEvent.mouseDown(tomOption);
 
     expect(screen.getByText(/you voted for/i)).toHaveTextContent("Tom Holland");
     expect(within(resultsBar).getByText(/tom holland/i)).toHaveTextContent(
