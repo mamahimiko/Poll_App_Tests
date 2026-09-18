@@ -27,7 +27,7 @@ describe("Poll option", () => {
     expect(screen.getByText(lokiOption.name)).toBeInTheDocument();
 
     const loki = screen.getByRole("img");
-    expect(loki.getAttribute("src")).toContain(lokiOption.image);
+    expect(loki.getAttribute("src")).toContain(lokiOption.image); // toBe to toContain
     expect(loki.getAttribute("alt")).toBe(lokiOption.name);
   });
 
