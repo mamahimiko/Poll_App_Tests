@@ -5,17 +5,17 @@
 The existing tests covered most of the functionality, so I did not need to add any additional tests.
 Initially, the dropdown was implemented using HTML `<option>` elements, and the test used the following code:
 
-```javascript
+
 fireEvent.change(changeDropdown, { target: { value: "option-6" } });
-```
+
 
 However, when I changed the screen size to a mobile layout, the design did not work as expected. Therefore, I implemented the dropdown without using `<option>` elements.
 As a result, I changed the test to:
 
-```javascript
+
 const changeDropdown = screen.getByTestId("change-vote-option");
 fireEvent.click(changeDropdown);
-```
+
 
 This allowed the test to work with the updated dropdown implementation while preserving the existing test coverage.
 
